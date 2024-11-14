@@ -1,0 +1,167 @@
+.music {
+  display: none;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.container {
+  background: url("images/underwater.jpg");
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+}
+
+.fish-container {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.fish-container img {
+  height: 100px;
+  position: absolute;
+}
+
+.fish1 {
+  top: 33%;
+  left: -10%;
+  animation: swim-left 10s linear infinite;
+}
+
+.fish2 {
+  top: 66%;
+  left:   -10%;
+  animation: swim-right 12s linear infinite 5s;
+}
+.fish3 {
+  left: -30%;
+  top: 110%;
+  animation: fishAnimation 11s linear infinite 3s;
+}
+
+@keyframes fishAnimation {
+  0% {
+    left: -30%;
+    top: 110%;
+  }
+  100% {
+    left: 110%;
+    top: -30%;
+  }
+}
+
+.smallFish {
+  position: absolute;
+  height: 65px !important;
+  top: 3%;
+  left: -10%;
+  opacity: 0.75;
+  animation: swim-right 10s linear infinite 3s;
+}
+
+.diver1, .diver2, .diver3 {
+  position: absolute;
+  bottom: 70%;
+  width: 200px;
+  animation: swim-up-and-down 6s infinite;
+}
+
+.diver1 { left: 10%;}
+.diver2 { left: 40% }
+.diver3 { left: 70% }
+
+@keyframes swim-right {
+  from {
+      transform: translateX(-200px) scaleX(1);
+  }
+  to {
+      transform: translateX(100vw) scaleX(1);
+  }
+}
+
+@keyframes swim-left {
+  from {
+      transform: translateX(100vw) scaleX(-1);
+  }
+  to {
+      transform: translateX(-200px) scaleX(-1);
+  }
+}
+
+.bubble-container {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.bubble-container img {
+  height: 40px;
+  position: absolute;
+  top: 140%;
+  transform: translateX(-50%);
+}
+
+.bubble1 {
+  left: 16%;
+  animation: bubbleAnim 7s linear infinite 2s;
+}
+.bubble2 {
+  left: 48%;
+  animation: bubbleAnim 7s linear infinite 8s;
+}
+.bubble3 {
+  left: 80%;
+  animation: bubbleAnim 7s linear infinite 5s;
+}
+
+@keyframes bubbleAnim {
+  0% {
+    top: 140%;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    top: 20%;
+    opacity: 0;
+  }
+}
+
+.furret {
+  bottom: 5%;
+  animation: swim-cycle 30s linear infinite;
+}
+
+@keyframes swim-cycle {
+  0% {
+    transform: translateX(-200px) scaleX(-1);
+  }
+  50% {
+    transform: translateX(100vw) scaleX(-1);
+  }
+  
+  50.1% {
+    transform: translateX(100vw) scaleX(1);
+  }
+  100% {
+    transform: translateX(-200px) scaleX(1);
+  }
+}
+
+@keyframes swim-up-and-down {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-20px);
+  }
+}
+
